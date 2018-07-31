@@ -17,7 +17,7 @@ jbyteArray JNICALL hash11_native(JNIEnv *env, jclass cls, jbyteArray header)
 
     if (P)
 	{
-	
+
 	uint256 result = Hash9(P, P+Plen);
 
     /*if (crypto_scrypt((uint8_t *) P, Plen, (uint8_t *) S, Slen, N, r, p, buf, dkLen)) {
@@ -43,7 +43,7 @@ jbyteArray JNICALL hash11_native(JNIEnv *env, jclass cls, jbyteArray header)
 	{
 		(env)->SetByteArrayRegion(DK, 0, 32, (jbyte *) result.begin());
 	}
-	
+
 
     if (P) (env)->ReleaseByteArrayElements(header, P, JNI_ABORT);
     //if (buf) free(buf);
@@ -62,7 +62,7 @@ jint JNI_OnLoad(JavaVM *vm, void *reserved) {
         return -1;
     }
 
-    jclass cls = (env)->FindClass("com/hashengineering/crypto/X11");
+    jclass cls = (env)->FindClass("com/alarmxcore/crypto/X11");
     int r = (env)->RegisterNatives(cls, methods, 1);
 
     return (r == JNI_OK) ? JNI_VERSION_1_6 : -1;

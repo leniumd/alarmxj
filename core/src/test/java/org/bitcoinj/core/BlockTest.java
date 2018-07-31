@@ -57,7 +57,7 @@ public class BlockTest {
     @Test
     public void testWork() throws Exception {
         BigInteger work = PARAMS.getGenesisBlock().getWork();
-        // This number is printed by Dash Core at startup as the calculated value of chainWork on testnet:
+        // This number is printed by Alarmx Core at startup as the calculated value of chainWork on testnet:
         //
         // 2017-04-22 19:20:20 UpdateTip: new best=00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c  height=0  log2_work=20.000022  tx=1  date=2014-01-25 16:10:06 progress=0.000002
         // log base 2 of 1048592 is 20.000022
@@ -70,7 +70,7 @@ public class BlockTest {
         block.verify(Block.BLOCK_HEIGHT_GENESIS, EnumSet.noneOf(Block.VerifyFlag.class));
         assertEquals("000000000fba0622132b6acd887021db720c541590d0408bc3ae525277fb2636", block.getHashAsString());
     }
-    
+
     @SuppressWarnings("deprecation")
     @Test
     public void testDate() throws Exception {
@@ -142,7 +142,7 @@ public class BlockTest {
         Block block = PARAMS.getDefaultSerializer().makeBlock(blockBytes);
         assertTrue(Arrays.equals(blockBytes, block.bitcoinSerialize()));
     }
-    
+
     @Test
     public void testUpdateLength() {
         NetworkParameters params = UnitTestParams.get();

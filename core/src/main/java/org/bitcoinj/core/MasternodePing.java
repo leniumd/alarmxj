@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Serializable;
 
-import static com.hashengineering.crypto.X11.x11Digest;
+import static com.alarmxcore.crypto.X11.x11Digest;
 import static org.bitcoinj.core.Utils.int64ToByteStreamLE;
 
 public class MasternodePing extends Message implements Serializable {

@@ -363,7 +363,7 @@ public class ConnectionImpl implements Connection, DashboardRenderable {
 		} finally {
 			circuitsLock.unlock();
 		}
-		if(circuitCount == 0 && (flags & DASHBOARD_CONNECTIONS_VERBOSE) == 0) {
+		if(circuitCount == 0 && (flags & ALRMXBOARD_CONNECTIONS_VERBOSE) == 0) {
 			return;
 		}
 		writer.print("  [Connection router="+ router.getNickname());

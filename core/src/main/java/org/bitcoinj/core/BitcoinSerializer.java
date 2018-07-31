@@ -72,7 +72,7 @@ public class BitcoinSerializer extends MessageSerializer {
         names.put(GetUTXOsMessage.class, "getutxos");
         names.put(UTXOsMessage.class, "utxos");
 
-        //Dash specific messages
+        //Alarmx specific messages
         names.put(DarkSendElectionEntryPingMessage.class, "dseep");
 
         names.put(TransactionLockRequest.class, "ix");
@@ -206,7 +206,7 @@ public class BitcoinSerializer extends MessageSerializer {
         Message message;
         if (command.equals("version")) {
             return new VersionMessage(params, payloadBytes);
-        } else if (command.equals("inv")) { 
+        } else if (command.equals("inv")) {
             message = makeInventoryMessage(payloadBytes, length);
         } else if (command.equals("block")) {
             message = makeBlock(payloadBytes, length);

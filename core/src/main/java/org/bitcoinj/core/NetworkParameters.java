@@ -107,7 +107,7 @@ public abstract class NetworkParameters {
     protected int spendableCoinbaseDepth;
     protected int subsidyDecreaseBlockCount;
     protected int budgetPaymentsStartBlock;
-    
+
     protected int[] acceptableAddressCodes;
     protected String[] dnsSeeds;
     protected int[] addrSeeds;
@@ -118,7 +118,7 @@ public abstract class NetworkParameters {
 
 
 
-    //Dash Extra Parameters
+    //Alarmx Extra Parameters
     protected String strSporkKey;
     String strMasternodePaymentsPubKey;
     String strDarksendPoolDummyAddress;
@@ -163,14 +163,14 @@ public abstract class NetworkParameters {
     public static final int TARGET_TIMESPAN = CoinDefinition.TARGET_TIMESPAN;//14 * 24 * 60 * 60;  // 2 weeks per difficulty cycle, on average.
     public static final int TARGET_SPACING = CoinDefinition.TARGET_SPACING;// 10 * 60;  // 10 minutes per block.
     public static final int INTERVAL = CoinDefinition.INTERVAL;//TARGET_TIMESPAN / TARGET_SPACING;
-    
+
     /**
      * Blocks with a timestamp after this should enforce BIP 16, aka "Pay to script hash". This BIP changed the
      * network rules in a soft-forking manner, that is, blocks that don't follow the rules are accepted but not
      * mined upon and thus will be quickly re-orged out as long as the majority are enforcing the rule.
      */
     public static final int BIP16_ENFORCE_TIME = 1333238400;
-    
+
     /**
      * The maximum number of coins to be generated
      */
@@ -453,7 +453,7 @@ public abstract class NetworkParameters {
 
     /**
      * Return the default serializer for this network. This is a shared serializer.
-     * @return 
+     * @return
      */
     public final MessageSerializer getDefaultSerializer() {
         // Construct a default serializer if we don't have one
@@ -508,7 +508,7 @@ public abstract class NetworkParameters {
      * The flags indicating which block validation tests should be applied to
      * the given block. Enables support for alternative blockchains which enable
      * tests based on different criteria.
-     * 
+     *
      * @param block block to determine flags for.
      * @param height height of the block, if known, null otherwise. Returned
      * tests should be a safe subset if block height is unknown.
@@ -571,7 +571,7 @@ public abstract class NetworkParameters {
         }
     }
 
-    //DASH Specific
+    //ALRMX Specific
     public boolean isDIP0001ActiveAtTip() { return DIP0001ActiveAtTip; }
     public void setDIPActiveAtTip(boolean active) { DIP0001ActiveAtTip = active; }
     public int getDIP0001BlockHeight() { return DIP0001BlockHeight; }

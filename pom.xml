@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.dashj</groupId>
-  <artifactId>dashj-parent</artifactId>
+  <groupId>org.alarmxj</groupId>
+  <artifactId>alarmxj-parent</artifactId>
   <version>0.14.4.4</version>
   <packaging>pom</packaging>
 
@@ -27,9 +27,9 @@
     <url>scm:git:https://github.com/bitcoinj/darkcoinj</url>
   </scm>
 
-  <name>dashj Parent</name>
-  <description>Provides the common configuration for the dashj modules</description>
-  <url>http://dash.org/dashj/</url>
+  <name>alarmxj Parent</name>
+  <description>Provides the common configuration for the alarmxj modules</description>
+  <url>http://alarmx.io/alarmxj/</url>
 
   <licenses>
     <license>
@@ -42,7 +42,7 @@
 
   <issueManagement>
     <system>GitHub</system>
-    <url>https://github.com/HashEngineering/dashj/issues</url>
+    <url>https://github.com/alarmxcore/alarmxj/issues</url>
   </issueManagement>
 
   <mailingLists>
@@ -54,9 +54,9 @@
 
   <distributionManagement>
     <repository>
-      <id>bintray-dash-Dashj</id>
-      <name>dash-Dashj</name>
-      <url>https://api.bintray.com/maven/dash/Dashj/org.dashj/;publish=1</url>
+      <id>bintray-alarmxcore-Alarmxj</id>
+      <name>alarmxcore-Alarmxj</name>
+      <url>https://api.bintray.com/maven/alarmxcore/Alarmxj/org.alarmxj/;publish=1</url>
     </repository>
   </distributionManagement>
 
@@ -144,7 +144,7 @@
         <artifactId>slf4j-api</artifactId>
         <version>1.7.20</version>
       </dependency>
-      <!-- dashj consumers are expected to provide their own SLF4J adapters
+      <!-- alarmxj consumers are expected to provide their own SLF4J adapters
     such as logback, slf4j-log4j12, slf4j-jcl and so on
     see http://www.slf4j.org/faq.html -->
       <dependency>

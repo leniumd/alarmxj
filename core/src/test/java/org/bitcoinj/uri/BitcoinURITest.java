@@ -1,6 +1,6 @@
 /*
  * Copyright 2012, 2014 the original author or authors.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,16 +38,16 @@ public class BitcoinURITest {
     @Test
     public void testConvertToBitcoinURI() throws Exception {
         Address goodAddress = Address.fromBase58(MAINNET, MAINNET_GOOD_ADDRESS);
-        
+
         // simple example
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?amount=12.34&label=Hello&message=AMessage", BitcoinURI.convertToBitcoinURI(goodAddress, parseCoin("12.34"), "Hello", "AMessage"));
-        
+
         // example with spaces, ampersand and plus
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?amount=12.34&label=Hello%20World&message=Mess%20%26%20age%20%2B%20hope", BitcoinURI.convertToBitcoinURI(goodAddress, parseCoin("12.34"), "Hello World", "Mess & age + hope"));
 
         // no amount, label present, message present
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?label=Hello&message=glory", BitcoinURI.convertToBitcoinURI(goodAddress, null, "Hello", "glory"));
-        
+
         // amount present, no label, message present
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?amount=0.1&message=glory", BitcoinURI.convertToBitcoinURI(goodAddress, parseCoin("0.1"), null, "glory"));
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?amount=0.1&message=glory", BitcoinURI.convertToBitcoinURI(goodAddress, parseCoin("0.1"), "", "glory"));
@@ -55,21 +55,21 @@ public class BitcoinURITest {
         // amount present, label present, no message
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?amount=12.34&label=Hello", BitcoinURI.convertToBitcoinURI(goodAddress, parseCoin("12.34"), "Hello", null));
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?amount=12.34&label=Hello", BitcoinURI.convertToBitcoinURI(goodAddress, parseCoin("12.34"), "Hello", ""));
-              
+
         // amount present, no label, no message
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?amount=1000", BitcoinURI.convertToBitcoinURI(goodAddress, parseCoin("1000"), null, null));
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?amount=1000", BitcoinURI.convertToBitcoinURI(goodAddress, parseCoin("1000"), "", ""));
 
         // no amount, label present, no message
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?label=Hello", BitcoinURI.convertToBitcoinURI(goodAddress, null, "Hello", null));
-        
+
         // no amount, no label, message present
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?message=Agatha", BitcoinURI.convertToBitcoinURI(goodAddress, null, null, "Agatha"));
         assertEquals(CoinDefinition.coinURIScheme + ":" + MAINNET_GOOD_ADDRESS + "?message=Agatha", BitcoinURI.convertToBitcoinURI(goodAddress, null, "", "Agatha"));
-      
+
         // no amount, no label, no message
-        assertEquals("dash:" + MAINNET_GOOD_ADDRESS, BitcoinURI.convertToBitcoinURI(goodAddress, null, null, null));
-        assertEquals("dash:" + MAINNET_GOOD_ADDRESS, BitcoinURI.convertToBitcoinURI(goodAddress, null, "", ""));
+        assertEquals("alarmx:" + MAINNET_GOOD_ADDRESS, BitcoinURI.convertToBitcoinURI(goodAddress, null, null, null));
+        assertEquals("alarmx:" + MAINNET_GOOD_ADDRESS, BitcoinURI.convertToBitcoinURI(goodAddress, null, "", ""));
 
         // different scheme
         final NetworkParameters alternativeParameters = new MainNetParams() {
@@ -160,7 +160,7 @@ public class BitcoinURITest {
 
     /**
      * Handles a simple amount
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -184,7 +184,7 @@ public class BitcoinURITest {
 
     /**
      * Handles a simple label
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -197,7 +197,7 @@ public class BitcoinURITest {
 
     /**
      * Handles a simple label with an embedded ampersand and plus
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -212,7 +212,7 @@ public class BitcoinURITest {
 
     /**
      * Handles a Russian label (Unicode test)
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -220,7 +220,7 @@ public class BitcoinURITest {
     public void testGood_LabelWithRussian() throws BitcoinURIParseException {
         // Moscow in Russian in Cyrillic
         String moscowString = "\u041c\u043e\u0441\u043a\u0432\u0430";
-        String encodedLabel = BitcoinURI.encodeURLString(moscowString); 
+        String encodedLabel = BitcoinURI.encodeURLString(moscowString);
         testObject = new BitcoinURI(MAINNET, BITCOIN_SCHEME + ":" + MAINNET_GOOD_ADDRESS + "?label="
                 + encodedLabel);
         assertEquals(moscowString, testObject.getLabel());
@@ -228,7 +228,7 @@ public class BitcoinURITest {
 
     /**
      * Handles a simple message
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -241,7 +241,7 @@ public class BitcoinURITest {
 
     /**
      * Handles various well-formed combinations
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -256,7 +256,7 @@ public class BitcoinURITest {
 
     /**
      * Handles a badly formatted amount field
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -295,7 +295,7 @@ public class BitcoinURITest {
 
     /**
      * Handles duplicated fields (sneaky address overwrite attack)
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -315,10 +315,10 @@ public class BitcoinURITest {
         assertEquals("aardvark=zebra", new BitcoinURI(MAINNET, BITCOIN_SCHEME + ":"
                 + MAINNET_GOOD_ADDRESS + "?label=aardvark=zebra").getLabel());
     }
-    
+
     /**
      * Handles unknown fields (required and not required)
-     * 
+     *
      * @throws BitcoinURIParseException
      *             If something goes wrong
      */
@@ -390,14 +390,14 @@ public class BitcoinURITest {
     @Test
     public void testMultiplePaymentProtocolReq() throws Exception {
         BitcoinURI uri = new BitcoinURI(MAINNET,
-                "dash:?r=https%3A%2F%2Fbitcoincore.org%2F%7Egavin&r1=bt:112233445566");
+                "alarmx:?r=https%3A%2F%2Fbitcoincore.org%2F%7Egavin&r1=bt:112233445566");
         assertEquals(ImmutableList.of("bt:112233445566", "https://bitcoincore.org/~gavin"), uri.getPaymentRequestUrls());
         assertEquals("https://bitcoincore.org/~gavin", uri.getPaymentRequestUrl());
     }
 
     @Test
     public void testNoPaymentProtocolReq() throws Exception {
-        BitcoinURI uri = new BitcoinURI(MAINNET, "dash:" + MAINNET_GOOD_ADDRESS);
+        BitcoinURI uri = new BitcoinURI(MAINNET, "alarmx:" + MAINNET_GOOD_ADDRESS);
         assertNull(uri.getPaymentRequestUrl());
         assertEquals(ImmutableList.of(), uri.getPaymentRequestUrls());
         assertNotNull(uri.getAddress());
@@ -406,7 +406,7 @@ public class BitcoinURITest {
     @Test
     public void testUnescapedPaymentProtocolReq() throws Exception {
         BitcoinURI uri = new BitcoinURI(TestNet3Params.get(),
-                "dash:?r=https://merchant.com/pay.php?h%3D2a8628fc2fbe");
+                "alarmx:?r=https://merchant.com/pay.php?h%3D2a8628fc2fbe");
         assertEquals("https://merchant.com/pay.php?h=2a8628fc2fbe", uri.getPaymentRequestUrl());
         assertEquals(ImmutableList.of("https://merchant.com/pay.php?h=2a8628fc2fbe"), uri.getPaymentRequestUrls());
         assertNull(uri.getAddress());

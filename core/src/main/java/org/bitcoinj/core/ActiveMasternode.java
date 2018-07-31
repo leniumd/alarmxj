@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * Created by Hash Engineering on 2/22/2016.
  *
- * Translated from CActiveMasternode class (dash/src/activemasternode.cpp)
+ * Translated from CActiveMasternode class (alarmx/src/activemasternode.cpp)
  */
 public class ActiveMasternode {
     private static final Logger log = LoggerFactory.getLogger(ActiveMasternode.class);

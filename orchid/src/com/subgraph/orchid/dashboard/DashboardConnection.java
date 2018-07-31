@@ -52,10 +52,10 @@ public class DashboardConnection implements Runnable {
 		while((c = input.read()) != -1) {
 			switch(c) {
 			case 'c':
-				toggleFlagWithVerbose(DashboardRenderable.DASHBOARD_CONNECTIONS, DashboardRenderable.DASHBOARD_CONNECTIONS_VERBOSE);
+				toggleFlagWithVerbose(DashboardRenderable.ALRMXBOARD_CONNECTIONS, DashboardRenderable.ALRMXBOARD_CONNECTIONS_VERBOSE);
 				break;
 			case 'p':
-				toggleFlag(DashboardRenderable.DASHBOARD_PREDICTED_PORTS);
+				toggleFlag(DashboardRenderable.ALRMXBOARD_PREDICTED_PORTS);
 				break;
 			default:
 				break;

@@ -80,7 +80,7 @@ public class CircuitPredictor implements DashboardRenderable {
 	public void dashboardRender(DashboardRenderer renderer, PrintWriter writer, int flags)
 			throws IOException {
 		
-		if((flags & DASHBOARD_PREDICTED_PORTS) == 0) {
+		if((flags & ALRMXBOARD_PREDICTED_PORTS) == 0) {
 			return;
 		}
 		writer.println("[Predicted Ports] ");

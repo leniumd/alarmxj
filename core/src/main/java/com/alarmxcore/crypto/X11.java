@@ -1,4 +1,4 @@
-package com.hashengineering.crypto;
+package com.alarmxcore.crypto;
 
 import org.bitcoinj.core.Sha256Hash;
 

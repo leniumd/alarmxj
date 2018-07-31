@@ -804,7 +804,7 @@ public class Wallet extends BaseTaggableObject
     /**
      * Returns whether this wallet consists entirely of watching keys (unencrypted keys with no private part). Mixed
      * wallets are forbidden.
-     * 
+     *
      * @throws IllegalStateException
      *             if there are no keys, or if there is a mix between watching and non-watching keys.
      */
@@ -2008,7 +2008,7 @@ public class Wallet extends BaseTaggableObject
             // Mark the tx as appearing in this block so we can find it later after a re-org. This also tells the tx
             // confidence object about the block and sets its depth appropriately.
             tx.setBlockAppearance(block, bestChain, relativityOffset);
-            //added for Dash
+            //added for Alarmx
             if(context.instantSend != null) //Check for unit tests
                 context.instantSend.syncTransaction(tx, block);
             if (bestChain) {
@@ -2523,7 +2523,7 @@ public class Wallet extends BaseTaggableObject
 
             isConsistentOrThrow();
 
-            //Dash Specific
+            //Alarmx Specific
             if(tx.getConfidence().isIX() && tx.getConfidence().getSource() == Source.SELF) {
                 context.instantSend.processTxLockRequest((TransactionLockRequest)tx);
             }
@@ -4708,10 +4708,10 @@ public class Wallet extends BaseTaggableObject
      * <p>Gets a bloom filter that contains all of the public keys from this wallet, and which will provide the given
      * false-positive rate if it has size elements. Keep in mind that you will get 2 elements in the bloom filter for
      * each key in the wallet, for the public key and the hash of the public key (address form).</p>
-     * 
+     *
      * <p>This is used to generate a BloomFilter which can be {@link BloomFilter#merge(BloomFilter)}d with another.
      * It could also be used if you have a specific target for the filter's size.</p>
-     * 
+     *
      * <p>See the docs for {@link BloomFilter(int, double)} for a brief explanation of anonymity when using bloom
      * filters.</p>
      */
@@ -4905,7 +4905,7 @@ public class Wallet extends BaseTaggableObject
             if (needAtLeastReferenceFee && fees.compareTo(dip0001Active ? Transaction.REFERENCE_DEFAULT_MIN_TX_FEE.div(10) : Transaction.REFERENCE_DEFAULT_MIN_TX_FEE) < 0)
                 fees = dip0001Active ? Transaction.REFERENCE_DEFAULT_MIN_TX_FEE.div(10) : Transaction.REFERENCE_DEFAULT_MIN_TX_FEE;
 
-            //Dash instantSend
+            //Alarmx instantSend
             if(req.useInstantSend) {
                 Coin ixFee = dip0001Active ? TransactionLockRequest.MIN_FEE.div(10) : TransactionLockRequest.MIN_FEE;
                 fees = Coin.valueOf(max(ixFee.getValue(), ixFee.multiply(lastCalculatedInputs).getValue()));
@@ -5146,7 +5146,7 @@ public class Wallet extends BaseTaggableObject
                 continue;
 
             }
-            //Dash Specific
+            //Alarmx Specific
             if(tx.getConfidence().isIX() && tx.getConfidence().getSource() == Source.SELF) {
                 //This transaction was stuck and we need to track it once again with InstantSend
                 context.instantSend.processTxLockRequest((TransactionLockRequest)tx);

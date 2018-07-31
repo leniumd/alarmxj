@@ -247,14 +247,14 @@ public class FlatDB<Type extends AbstractManager> {
         /*
 
 
-            2016-06-02 21:23:55     dash-shutoff |      Governance Objects: 1, Seen Budgets: 1, Seen Budget Votes: 0, Vote Count: 0
-            2016-06-02 21:23:55     dash-shutoff |      Governance Objects: 1, Seen Budgets: 0, Seen Budget Votes: 0, Vote Count: 0
-            2016-06-02 21:29:17            dashd |      Governance Objects: 1, Seen Budgets: 0, Seen Budget Votes: 0, Vote Count: 0
-            2016-06-02 21:29:17            dashd | CFlatDB - Governance Objects: 1, Seen Budgets: 0, Seen Budget Votes: 0, Vote Count: 0
-            2016-06-02 21:29:25     dash-shutoff |      Governance Objects: 1, Seen Budgets: 0, Seen Budget Votes: 0, Vote Count: 0
-            2016-06-02 21:30:07     dash-shutoff |      Governance Objects: 1, Seen Budgets: 1, Seen Budget Votes: 0, Vote Count: 0
-            2016-06-02 21:30:16            dashd |      Governance Objects: 1, Seen Budgets: 1, Seen Budget Votes: 0, Vote Count: 0
-            2016-06-02 21:30:16            dashd | CFlatDB - Governance Objects: 1, Seen Budgets: 1, Seen Budget Votes: 0, Vote Count: 0
+            2016-06-02 21:23:55     alarmx-shutoff |      Governance Objects: 1, Seen Budgets: 1, Seen Budget Votes: 0, Vote Count: 0
+            2016-06-02 21:23:55     alarmx-shutoff |      Governance Objects: 1, Seen Budgets: 0, Seen Budget Votes: 0, Vote Count: 0
+            2016-06-02 21:29:17            alarmxd |      Governance Objects: 1, Seen Budgets: 0, Seen Budget Votes: 0, Vote Count: 0
+            2016-06-02 21:29:17            alarmxd | CFlatDB - Governance Objects: 1, Seen Budgets: 0, Seen Budget Votes: 0, Vote Count: 0
+            2016-06-02 21:29:25     alarmx-shutoff |      Governance Objects: 1, Seen Budgets: 0, Seen Budget Votes: 0, Vote Count: 0
+            2016-06-02 21:30:07     alarmx-shutoff |      Governance Objects: 1, Seen Budgets: 1, Seen Budget Votes: 0, Vote Count: 0
+            2016-06-02 21:30:16            alarmxd |      Governance Objects: 1, Seen Budgets: 1, Seen Budget Votes: 0, Vote Count: 0
+            2016-06-02 21:30:16            alarmxd | CFlatDB - Governance Objects: 1, Seen Budgets: 1, Seen Budget Votes: 0, Vote Count: 0
 
 
             This fact can be demonstrated by adding a governance item, then stopping and starting the client.
@@ -287,4 +287,3 @@ public class FlatDB<Type extends AbstractManager> {
         return true;
     }
 };
-

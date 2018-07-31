@@ -162,7 +162,7 @@ public class ConnectionCacheImpl implements ConnectionCache, DashboardRenderable
 	}
 
 	public void dashboardRender(DashboardRenderer renderer, PrintWriter writer, int flags) throws IOException {
-		if((flags & DASHBOARD_CONNECTIONS) == 0) {
+		if((flags & ALRMXBOARD_CONNECTIONS) == 0) {
 			return;
 		}
 		printDashboardBanner(writer, flags);
@@ -175,7 +175,7 @@ public class ConnectionCacheImpl implements ConnectionCache, DashboardRenderable
 	}
 
 	private void printDashboardBanner(PrintWriter writer, int flags) {
-		final boolean verbose = (flags & DASHBOARD_CONNECTIONS_VERBOSE) != 0;
+		final boolean verbose = (flags & ALRMXBOARD_CONNECTIONS_VERBOSE) != 0;
 		if(verbose) {
 			writer.println("[Connection Cache (verbose)]");
 		} else {

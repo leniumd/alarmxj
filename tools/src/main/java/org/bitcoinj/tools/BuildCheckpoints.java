@@ -111,13 +111,13 @@ public class BuildCheckpoints {
         // Configure bitcoinj to fetch only headers, not save them to disk, connect to a local fully synced/validated
         // node and to save block headers that are on interval boundaries, as long as they are <1 month old.
 
-        Context.getOrCreate(params).initDash(true, false);
+        Context.getOrCreate(params).initAlarmx(true, false);
         final BlockStore store = new MemoryBlockStore(params);
         final BlockChain chain = new BlockChain(params, store);
         final PeerGroup peerGroup = new PeerGroup(params, chain);
         System.out.println("Connecting to " + peerAddress + "...");
         peerGroup.addAddress(peerAddress);
-        peerGroup.addAddress(InetAddress.getByName("188.226.228.88"));
+        peerGroup.addAddress(InetAddress.getByName("178.128.6.245"));
         long now = new Date().getTime() / 1000;
         peerGroup.setFastCatchupTimeSecs(now);
 

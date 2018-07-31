@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import static com.hashengineering.crypto.X11.x11Digest;
+import static com.alarmxcore.crypto.X11.x11Digest;
 
 /**
  * Created by Eric on 2/8/2015.

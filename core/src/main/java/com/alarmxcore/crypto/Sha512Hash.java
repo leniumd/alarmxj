@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.hashengineering.crypto;
+package com.alarmxcore.crypto;
 
 import com.google.common.io.ByteStreams;
 import org.bitcoinj.core.Sha256Hash;

@@ -20,10 +20,10 @@ import com.subgraph.orchid.misc.GuardedBy;
 public class Dashboard implements DashboardRenderable, DashboardRenderer {
 	private final static Logger logger = Logger.getLogger(Dashboard.class.getName());
 	
-	private final static String DASHBOARD_PORT_PROPERTY = "com.subgraph.orchid.dashboard.port";
+	private final static String ALRMXBOARD_PORT_PROPERTY = "com.subgraph.orchid.dashboard.port";
 	
 	private final static int DEFAULT_LISTENING_PORT = 12345;
-	private final static int DEFAULT_FLAGS = DASHBOARD_CIRCUITS | DASHBOARD_STREAMS;
+	private final static int DEFAULT_FLAGS = ALRMXBOARD_CIRCUITS | ALRMXBOARD_STREAMS;
 	private final static IPv4Address LOCALHOST = IPv4Address.createFromString("127.0.0.1");
 			
 	@GuardedBy("this") private int listeningPort;
@@ -42,12 +42,12 @@ public class Dashboard implements DashboardRenderable, DashboardRenderer {
 	}
 	
 	private static int chooseListeningPort() {
-		final String dbPort = System.getProperty(DASHBOARD_PORT_PROPERTY);
+		final String dbPort = System.getProperty(ALRMXBOARD_PORT_PROPERTY);
 		final int port = parsePortProperty(dbPort);
 		if(port > 0 && port <= 0xFFFF) {
 			return port;
 		} else if(dbPort != null) {
-			logger.warning(DASHBOARD_PORT_PROPERTY + " was not a valid port value: "+ dbPort);
+			logger.warning(ALRMXBOARD_PORT_PROPERTY + " was not a valid port value: "+ dbPort);
 		}
 		return DEFAULT_LISTENING_PORT;
 	}
@@ -99,7 +99,7 @@ public class Dashboard implements DashboardRenderable, DashboardRenderer {
 	}
 	
 	public boolean isEnabledByProperty() {
-		return System.getProperty(DASHBOARD_PORT_PROPERTY) != null;
+		return System.getProperty(ALRMXBOARD_PORT_PROPERTY) != null;
 	}
 
 	public synchronized void startListening() {

@@ -20,7 +20,7 @@ package org.bitcoinj.core;
 import com.google.common.annotations.*;
 import com.google.common.base.*;
 import com.google.common.collect.*;
-import com.hashengineering.crypto.X11;
+import com.alarmxcore.crypto.X11;
 import org.bitcoinj.script.*;
 import org.slf4j.*;
 

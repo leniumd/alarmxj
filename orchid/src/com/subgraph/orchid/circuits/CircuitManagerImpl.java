@@ -333,7 +333,7 @@ public class CircuitManagerImpl implements CircuitManager, DashboardRenderable {
 	}
 
 	public void dashboardRender(DashboardRenderer renderer, PrintWriter writer, int flags) throws IOException {
-		if((flags & DASHBOARD_CIRCUITS) == 0) {
+		if((flags & ALRMXBOARD_CIRCUITS) == 0) {
 			return;
 		}
 		renderer.renderComponent(writer, flags, connectionCache);

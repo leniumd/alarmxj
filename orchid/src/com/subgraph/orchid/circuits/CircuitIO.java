@@ -341,7 +341,7 @@ public class CircuitIO implements DashboardRenderable {
 	}
 
 	public void dashboardRender(DashboardRenderer renderer, PrintWriter writer, int flags) throws IOException {
-		if((flags & DASHBOARD_STREAMS) == 0) {
+		if((flags & ALRMXBOARD_STREAMS) == 0) {
 			return;
 		}
 		for(Stream s: getActiveStreams()) {

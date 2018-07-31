@@ -52,9 +52,9 @@ import java.util.List;
 public class PaymentProtocol {
 
     // MIME types as defined in BIP71.
-    public static final String MIMETYPE_PAYMENTREQUEST = "application/dash-paymentrequest";
-    public static final String MIMETYPE_PAYMENT = "application/dash-payment";
-    public static final String MIMETYPE_PAYMENTACK = "application/dash-paymentack";
+    public static final String MIMETYPE_PAYMENTREQUEST = "application/alarmx-paymentrequest";
+    public static final String MIMETYPE_PAYMENT = "application/alarmx-payment";
+    public static final String MIMETYPE_PAYMENTACK = "application/alarmx-paymentack";
 
     /**
      * Create a payment request with one standard pay to address output. You may want to sign the request using
@@ -79,7 +79,7 @@ public class PaymentProtocol {
     /**
      * Create a payment request. You may want to sign the request using {@link #signPaymentRequest}. Use
      * {@link Protos.PaymentRequest.Builder#build} to get the actual payment request.
-     * 
+     *
      * @param params network parameters
      * @param outputs list of outputs to request coins to
      * @param memo arbitrary, user readable memo, or null if none
@@ -109,7 +109,7 @@ public class PaymentProtocol {
 
     /**
      * Parse a payment request.
-     * 
+     *
      * @param paymentRequest payment request to parse
      * @return instance of {@link PaymentSession}, used as a value object
      * @throws PaymentProtocolException
@@ -121,7 +121,7 @@ public class PaymentProtocol {
 
     /**
      * Sign the provided payment request.
-     * 
+     *
      * @param paymentRequest Payment request to sign, in its builder form.
      * @param certificateChain Certificate chain to send with the payment request, ordered from client certificate to root
      *            certificate. The root certificate itself may be omitted.
@@ -158,7 +158,7 @@ public class PaymentProtocol {
 
     /**
      * Uses the provided PKI method to find the corresponding public key and verify the provided signature.
-     * 
+     *
      * @param paymentRequest Payment request to verify.
      * @param trustStore KeyStore of trusted root certificate authorities.
      * @return verification data, or null if no PKI method was specified in the {@link Protos.PaymentRequest}.
@@ -287,7 +287,7 @@ public class PaymentProtocol {
 
     /**
      * Create a payment message with one standard pay to address output.
-     * 
+     *
      * @param transactions one or more transactions that satisfy the requested outputs.
      * @param refundAmount amount of coins to request as a refund, or null if no refund.
      * @param refundAddress address to refund coins to
@@ -310,7 +310,7 @@ public class PaymentProtocol {
 
     /**
      * Create a payment message. This wraps up transaction data along with anything else useful for making a payment.
-     * 
+     *
      * @param transactions transactions to include with the payment message
      * @param refundOutputs list of outputs to refund coins to, or null
      * @param memo arbitrary, user readable memo, or null if none
@@ -337,7 +337,7 @@ public class PaymentProtocol {
 
     /**
      * Parse transactions from payment message.
-     * 
+     *
      * @param params network parameters (needed for transaction deserialization)
      * @param paymentMessage payment message to parse
      * @return list of transactions
@@ -372,7 +372,7 @@ public class PaymentProtocol {
 
     /**
      * Create a payment ack.
-     * 
+     *
      * @param paymentMessage payment message to send with the ack
      * @param memo arbitrary, user readable memo, or null if none
      * @return created payment ack
@@ -396,7 +396,7 @@ public class PaymentProtocol {
     /**
      * Create a standard pay to address output for usage in {@link #createPaymentRequest} and
      * {@link #createPaymentMessage}.
-     * 
+     *
      * @param amount amount to pay, or null
      * @param address address to pay to
      * @return output
