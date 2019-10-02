@@ -29,8 +29,7 @@ public class DarkSendEntry {
     boolean add(final ArrayList<TransactionInput> vinIn, long amountIn, final Transaction collateralIn, final ArrayList<TransactionOutput> voutIn)
     {
         if(isSet){return false;}
-
-
+        
         for(TransactionInput v : vinIn)
         {
             DarkSendEntryVin s = new DarkSendEntryVin(params);
@@ -48,7 +47,6 @@ public class DarkSendEntry {
 
     boolean addSig(final TransactionInput vin)
     {
-
         for(DarkSendEntryVin s : sev) {
             if(s.vin.getOutpoint().equals(vin.getOutpoint()) && s.vin.getSequenceNumber() == vin.getSequenceNumber()){
                 if(s.isSigSet){return false;}
